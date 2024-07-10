@@ -1,21 +1,33 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Define a versão do modelo POM -->
     <modelVersion>4.0.0</modelVersion>
+    <!-- Define o ID do grupo do projeto -->
     <groupId>com.dio</groupId>
+    <!-- Define o ID do artefato do projeto -->
     <artifactId>eleicao-sindico</artifactId>
+    <!-- Define a versão do projeto -->
     <version>1.0.0-SNAPSHOT</version>
     <properties>
+        <!-- Define a codificação de fonte do projeto -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Define a versão do compilador de origem Java -->
         <maven.compiler.source>11</maven.compiler.source>
+        <!-- Define a versão do compilador de destino Java -->
         <maven.compiler.target>11</maven.compiler.target>
+        <!-- Define a versão do plugin Quarkus -->
         <quarkus-plugin.version>2.0.0.Final</quarkus-plugin.version>
+        <!-- Define o ID do artefato da plataforma Quarkus -->
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
+        <!-- Define o ID do grupo da plataforma Quarkus -->
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
+        <!-- Define a versão da plataforma Quarkus -->
         <quarkus.platform.version>2.0.0.Final</quarkus.platform.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- Gerencia a dependência da plataforma Quarkus -->
             <dependency>
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>${quarkus.platform.artifact-id}</artifactId>
@@ -26,33 +38,40 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <!-- Adiciona a dependência para Quarkus RESTEasy -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy</artifactId>
         </dependency>
+        <!-- Adiciona a dependência para Quarkus RESTEasy com Jackson -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy-jackson</artifactId>
         </dependency>
+        <!-- Adiciona a dependência para Quarkus Hibernate ORM Panache -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-orm-panache</artifactId>
         </dependency>
+        <!-- Adiciona a dependência para Quarkus JUnit5 -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Adiciona a dependência para Quarkus REST Client -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-rest-client</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Adiciona a dependência para RestAssured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Adiciona a dependência para Quarkus JDBC H2 -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-jdbc-h2</artifactId>
@@ -60,6 +79,7 @@
     </dependencies>
     <build>
         <plugins>
+            <!-- Configura o plugin Maven do Quarkus -->
             <plugin>
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
@@ -67,17 +87,20 @@
                 <executions>
                     <execution>
                         <goals>
+                            <!-- Define os objetivos de build e dev -->
                             <goal>build</goal>
                             <goal>dev</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+            <!-- Configura o plugin Maven Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
+                    <!-- Define a versão de origem e destino do compilador -->
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                 </configuration>
