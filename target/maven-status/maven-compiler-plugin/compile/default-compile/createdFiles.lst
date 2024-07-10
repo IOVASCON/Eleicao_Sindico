@@ -1,0 +1,6 @@
+com\dio\eleicao\model\Resident.class
+com\dio\eleicao\resource\ElectionResource.class
+com\dio\eleicao\service\ElectionService.class
+META-INF\panache-archive.marker
+com\dio\eleicao\repository\CandidateRepository.class
+com\dio\eleicao\model\Candidate.class
